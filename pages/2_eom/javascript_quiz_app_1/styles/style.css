@@ -244,16 +244,13 @@ input:disabled {
 
 .theory_eom{
     display: flex;
-    align-items: center;
+    float: left;
     flex-direction: row;
 }
 
 .TBimg{
     height: 400px;
-    width: auto;
-    margin-left: 35px;
-    margin-right: 5em;
-    
+    width: auto;   
 }
 
 .theory_eom p{
