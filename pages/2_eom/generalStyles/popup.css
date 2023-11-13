@@ -163,7 +163,7 @@
 .popup_text {
     display: flex;
     align-items: flex-start;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .popup::-webkit-scrollbar {

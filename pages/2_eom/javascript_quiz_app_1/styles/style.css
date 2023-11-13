@@ -282,7 +282,9 @@ input:disabled {
 
 
 @media (max-width: 820px) {
-
+    #theory_eom_2{
+        flex-direction: column;
+    }
     .TBimg{
         width: 80%;
         object-fit: contain;

@@ -34,6 +34,10 @@ body{
     background-color: black;
 }
 
+.links_black_header{
+    min-width: 165px;
+}
+
 .black_header a{
     color: white;
     padding: 15px;
@@ -41,7 +45,7 @@ body{
     padding-right: 30px;
     border: solid 2px;
     border-radius: 35px;
-    max-width: 165px;
+    min-width: 165px;
     width: 300px;
     transition: all 0.3s;
 }
@@ -262,16 +266,34 @@ input:disabled {
 .theory_eom p{
     color: #000;
     font-weight: 500;
+    font-size: clamp(20px, 2vw, 30px);
 }
 
 @media (max-width: 820px) {
+    #first_img_1{
+        width: 400px !important;
+    }
+    .radioquest{
+        grid-template-columns: 1fr;
+    }
     .black_header h1{
         width: 70%;
     }
 
+    .step_marker{
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
     .step_marker_and_buttons{
         display: flex;
+        align-items: center;
+        flex-direction: column;
         width: 93vw;
+    }
+
+    .m-b2{
+        width: 100% !important;
     }
 
     .leftimage{
