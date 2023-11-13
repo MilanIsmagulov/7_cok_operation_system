@@ -20,15 +20,15 @@ header {
 }
 
 header h1 {
-    font-size: 48px;
+    font-size: clamp(25px, 5vw, 40px);
 }
 
 .header_wrap {
     display: flex;
     justify-content: space-between;
+    min-height: 70px;
     align-items: center;
-    height: 4vh;
-    padding: 2vw;
+    padding: 2vh 2vw;
 }
 
 .header_links {
@@ -40,9 +40,9 @@ header h1 {
     text-decoration: none;
     text-align: center;
     color: white;
-    padding: 2vh 4vh;
+    padding: 2vh 0vh;
     border: solid 0.13vw;
-    border-radius: 2vw;
+    border-radius: 100vw;
     width: 10vw;
     margin-left: 2vw;
     transition: all 0.15s;
@@ -188,10 +188,6 @@ header h1 {
         margin-left: 20px;
     }
 
-    .header_wrap {
-        height: 60px;
-    }
-    
     .question_wrap button {
         font-size: 30px;
         padding: 10px;
@@ -247,10 +243,6 @@ header h1 {
 }
 
 @media (width <= 1000px) {
-    .header_wrap {
-        height: 35px;
-    }
-    
     .question_wrap button {
         font-size: 25px;
         width: 120px;
@@ -289,7 +281,6 @@ header h1 {
 }
 
 @media (max-width: 1180px){
-
     .question button{
         border-radius: 15px;
         width: 130px;
@@ -301,4 +292,5 @@ header h1 {
     .questions_btns{
         flex-wrap: wrap;
     }
+
 }
