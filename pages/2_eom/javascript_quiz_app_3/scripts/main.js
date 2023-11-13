@@ -58,7 +58,7 @@ ansbutton.addEventListener('click',function(event)
                 rightcheck=false
                 localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
                 event.target.innerHTML="Повторить"
-                event.target.setAttribute('onclick', "window.location.reload();")
+                event.target.setAttribute('onclick', "reloadPage()")
                 let nxt = document.getElementById('nextbutton')
                 nxt.removeAttribute('disabled')
                 nxt.classList.remove('blocked')
@@ -76,6 +76,11 @@ ansbutton.addEventListener('click',function(event)
         counter++
     }
 })
+
+function reloadPage(){
+    window.location.reload();
+}
+
 ansbutton.innerHTML="Ответить";
 divBtn.appendChild(ansbutton);
 divBtn.appendChild(nextbtn);
