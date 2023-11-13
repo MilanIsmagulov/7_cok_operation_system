@@ -530,6 +530,7 @@ function createBodyPopUp_Type5(question){
     el.appendChild(elChB);
 
     elChB.appendChild(createDropDownImage_Type5(question));
+
     if (!questionIsPassed(question)) elChB.appendChild(createBottomPopUp(question));
 
 
@@ -544,7 +545,8 @@ function createDropDownImage_Type5(question){
     elChBChB.setAttribute("src", `${imgPath}/${allQuestions.indexOf(question)}.png`);
     elChBChB.setAttribute("alt", "");
     elChB.appendChild(elChBChB);
-    if (question.image != null) el.appendChild(elChB);
+    
+    if (question.image) el.appendChild(elChB);
 
     el.appendChild(createAnswers_Type5(question));
 
