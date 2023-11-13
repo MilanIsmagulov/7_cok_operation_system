@@ -30,9 +30,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 95px;
     color: white;
     background-color: black;
+}
+
+#theory_eom_2{
+    flex-direction: row;
 }
 
 .black_header a{
@@ -42,8 +45,8 @@ body{
     padding-right: 30px;
     border: solid 2px;
     border-radius: 35px;
+    min-width: 165px;
     width: 300px;
-    margin-left: 25px;
     transition: all 0.3s;
 }
 
@@ -191,10 +194,45 @@ input:disabled {
     background: rgb(255, 144, 144);
 }
 
+.theory_eom{
+    display: flex;
+    float: left;
+    flex-direction: row;
+}
+
+.TBimg{
+    width: clamp(350px,30%,600px);
+    object-fit: contain;
+    padding: 35px;
+    padding-top: 0;
+}
+
+.theory_eom p{
+    font-size: 30px;
+
+}
+
+.main_image{
+    position: relative;
+    height: 500px;
+    margin: 40px;
+    border-radius: 15px;
+}
+
+.theory_eom p{
+    color: #000;
+    font-weight: 500;
+}
+
 @media (max-width: 1180px) {
     body{
         width: 100%;
 
+    }
+
+    .theory_eom{
+        padding: 25px;
+        flex-direction: column;
     }
 
     .answers_btn form {
@@ -242,37 +280,19 @@ input:disabled {
     }
 }
 
-.theory_eom{
-    display: flex;
-    float: left;
-    flex-direction: row;
-}
-
-.TBimg{
-    height: 400px;
-    width: auto;   
-}
-
-.theory_eom p{
-    font-size: 30px;
-
-}
-
-.main_image{
-    position: relative;
-    height: 500px;
-    margin: 40px;
-    border-radius: 15px;
-}
-
-.theory_eom p{
-    color: #000;
-    font-weight: 500;
-}
 
 @media (max-width: 820px) {
-    .black_header{
-        height: 150px;
+
+    .TBimg{
+        width: 80%;
+        object-fit: contain;
+        padding: 35px;
+        padding-top: 0;
+    }
+
+    .theory_eom{
+        padding: 25px;
+        flex-direction: column;
     }
 
     .black_header h1{
@@ -284,9 +304,6 @@ input:disabled {
         width: 93vw;
     }
 
-    .theory_eom{
-        height: 600px;
-    }
     .content{
         margin-right: 0;
     }
@@ -296,8 +313,4 @@ input:disabled {
     .second{
         flex-direction: column;
     }
-}
-
-@media (max-width: 1180px) {
-
 }

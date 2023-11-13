@@ -12,6 +12,7 @@
     color: #ff7175;
     margin: 15px;
     margin-left: 0px;
+
 }
 
 .popup_tex_content{
@@ -103,18 +104,17 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 30px 20px;
 }
 
 .popup_content {
+    align-items: center;
+    justify-content: center;
     background-color: white;
     color: black;
-    min-width: 400px;
-    max-width: 1700px;
-    min-height: 60vh;
     border-radius: 25px;
     padding: 25px;
+    width: 100vw;
 }
 
 .popup_header {
@@ -191,11 +191,11 @@
 }
 
 .theory_eom{
-    flex-direction: column;
-    height: 60vh;
-    overflow-y: auto;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
     margin-right: 25px;
-    
+    padding-left: 25px;
 }
 
 .image_part{
@@ -284,23 +284,32 @@
     justify-content: space-between;
 }
 
+.step_marker_and_buttons{
+    padding-top: 4vh;
+    display: flex;
+}
+
 @media (max-width: 1180px) {
-    .black_header{
-        height: 120px;
+    .leftimage{
+        width: 90vw !important;
     }
-
-
+    .leftimage.text{
+        margin-left: 0;
+        width: 100%;
+    }
     .black_header h1{
         width: 50%;
     }
 
+    .leftimage.img img{
+        width: 50%;
+    }
+
     .step_marker_and_buttons{
+        padding-top: 50px;
         display: flex;
     }
 
-    .theory_eom{
-        height: 400px;
-    }
     .content{
         margin-right: 0;
     }
@@ -311,12 +320,10 @@
     .popup_body{
         height: 50vh;
     }
-    .popup_content {
-        height: 50vh;
-    }
+
     .popup_text{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         height: 500px;
     }
 }

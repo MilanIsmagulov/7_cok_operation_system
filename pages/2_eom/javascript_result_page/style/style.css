@@ -38,6 +38,10 @@ body{
     background-color: black;
 }
 
+.black_header h1{
+    width: 70%;
+}
+
 .black_header a{
     color: white;
     padding: 15px;
@@ -46,7 +50,7 @@ body{
     border: solid 2px;
     border-radius: 35px;
     width: 300px;
-    margin-left: 25px;
+    min-width: 165px;
     transition: all 0.3s;
 }
 
