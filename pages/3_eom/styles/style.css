@@ -286,6 +286,12 @@ header h1 {
         flex-wrap: wrap;
     }
 
+    .state_marker{
+
+        top: 1px;
+        right: 5px;
+    }
+
     .header_links a {
         font-size: clamp(20px,1vw,30px);
         text-decoration: none;
@@ -313,5 +319,10 @@ header h1 {
         width: clamp(120px,10vw,180px);
         margin-left: 2vw;
         transition: all 0.15s;
+    }
+
+    .state_marker{
+        top: 1px;
+        right: 5px;
     }
 }
