@@ -73,6 +73,8 @@ ansbutton.addEventListener('click',function(event)
                 elem.classList.add('correct')
             }
         }
+        event.target.innerHTML="Повторить"
+        event.target.setAttribute('onclick', "reloadPage()")
         counter++
     }
 })
