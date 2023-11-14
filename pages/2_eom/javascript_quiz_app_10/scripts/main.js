@@ -18,6 +18,15 @@ nextbtn.innerHTML="Далее"
 ansbutton=document.createElement('button')
 ansbutton.id='checkAns'
 
+reloadBtn = document.createElement('button')
+reloadBtn.innerHTML="Повторить"
+reloadBtn.classList.add('blocked')
+
+divBtn.appendChild(reloadBtn)
+reloadBtn.addEventListener('click', function(){
+    window.location.reload();
+})
+
 ansbutton.addEventListener('click',function(event)
 {
     let rightcheck = false
@@ -54,6 +63,8 @@ ansbutton.addEventListener('click',function(event)
                 let nxt = document.getElementById('nextbutton')
                 nxt.removeAttribute('disabled')
                 nxt.classList.remove('blocked')
+                reloadBtn.classList.remove('blocked')
+                ansbutton.classList.add('blocked')
                 nxt.setAttribute('onclick',`location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
             }
         }

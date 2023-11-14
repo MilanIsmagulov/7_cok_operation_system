@@ -15,8 +15,20 @@ nextbtn.setAttribute('disabled','true')
 nextbtn.id="nextbutton"
 nextbtn.innerHTML="Далее"
 
+
+
+
 ansbutton=document.createElement('button')
 ansbutton.id='checkAns'
+
+reloadBtn = document.createElement('button')
+reloadBtn.innerHTML="Повторить"
+reloadBtn.classList.add('blocked')
+
+divBtn.appendChild(reloadBtn)
+reloadBtn.addEventListener('click', function(){
+    window.location.reload();
+})
 
 ansbutton.addEventListener('click',function(event)
 {
@@ -49,17 +61,20 @@ ansbutton.addEventListener('click',function(event)
                 elem.classList.add('incorrect')
                 rightcheck=false
                 localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
-                event.target.innerHTML="Повторить"
-                event.target.setAttribute('onclick', "window.location.reload();")
+                // event.target.innerHTML="Повторить"
+                // event.target.setAttribute('onclick', "window.location.reload();")
                 let nxt = document.getElementById('nextbutton')
                 nxt.removeAttribute('disabled')
                 nxt.classList.remove('blocked')
+                reloadBtn.classList.remove('blocked')
+                ansbutton.classList.add('blocked')
                 nxt.setAttribute('onclick',`location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
             }
         }
         else{  
             //Выделение правильных ответов, если они не выбраны
             if (rightans.indexOf(counter) != -1){
+                reloadBtn.classList.remove('blocked')
                 localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
                 elem.classList.add('correct')
             }
@@ -71,6 +86,7 @@ ansbutton.addEventListener('click',function(event)
         let nxt = document.getElementById('nextbutton')
         nxt.removeAttribute('disabled')
         nxt.classList.remove('blocked')
+        ansbutton.classList.add('blocked')
         nxt.setAttribute('onclick',`location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
         event.target.setAttribute('disabled',true)
         event.target.classList.add('blocked')
