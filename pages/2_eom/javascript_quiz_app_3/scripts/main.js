@@ -15,6 +15,15 @@ nextbtn.setAttribute('disabled','true')
 nextbtn.id="nextbutton"
 nextbtn.innerHTML="Далее"
 
+reloadBtn = document.createElement('button')
+reloadBtn.innerHTML="Повторить"
+reloadBtn.classList.add('blocked')
+
+divBtn.appendChild(reloadBtn)
+reloadBtn.addEventListener('click', function(){
+    window.location.reload();
+})
+
 ansbutton=document.createElement('button')
 ansbutton.id='checkAns'
 
@@ -59,9 +68,12 @@ ansbutton.addEventListener('click',function(event)
                 localStorage.setItem('answer_' + numberOfQuestion, JSON.stringify({questionPlace: false}));
                 event.target.innerHTML="Повторить"
                 event.target.setAttribute('onclick', "reloadPage()")
+                event.target.setAttribute('disabled',true)
+                event.target.classList.add('blocked')
                 let nxt = document.getElementById('nextbutton')
                 nxt.removeAttribute('disabled')
                 nxt.classList.remove('blocked')
+                reloadBtn.classList.remove('blocked')
                 nxt.setAttribute('onclick',`location.href='../javascript_quiz_app_${numberOfQuestion+1}/index.html'`)
 
             }
